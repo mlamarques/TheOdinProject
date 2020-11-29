@@ -1,0 +1,37 @@
+#main {
+    background-color:cadetblue;
+    font-family: Roboto;
+    text-align: center;
+    padding-top: 20px;
+}
+
+img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+#img-div {
+    background-color: ivory;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+ul {
+    list-style-position: inside;
+    width: 25%;
+    margin: auto;
+    text-align: left;
+}
+
+li  {
+    margin: 20px 0;
+}
