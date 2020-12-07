@@ -1,0 +1,69 @@
+body {
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    font-size: small;
+}
+
+img {
+    height: auto;
+    margin-top: 90px;
+    vertical-align: bottom;
+}
+
+#form {
+    overflow: visible;
+    margin: 0 32px;
+    border: solid;
+}
+
+#box {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 6px;
+    width: 484px;
+    width: auto;
+    max-width: 484px;
+}
+
+#searchbox {
+    background: #fff;
+    display: flex;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    z-index: 3;
+    height: 44px;
+    margin: 0 auto;
+    width: auto;
+}
+
+#divinput {
+    display: flex;
+    flex-wrap: wrap;
+    color: transparent;
+    flex: 100%;
+    white-space: pre;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    margin: 3px 20px 10px 20px;
+    color: rgba(0,0,0,.87);
+    word-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex: 100%;
+    height: 34px;
+    font-size: 16px;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+button {
+    margin-top: 20px;
+}
