@@ -1,69 +1,208 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: white;
     text-align: center;
     align-items: center;
     font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-img {
-    height: auto;
-    margin-top: 90px;
-    vertical-align: bottom;
+#container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.nav {
+    text-align: right;
+    width: 100%;
+    padding: 15px;
+    padding-right: 30px;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav_item {
+    margin-right: 15px;
+}
+
+.nav_item_app {
+    height: 30px;
+    width: 30px;
+    position: relative;
+}
+
+.nav_item_app svg {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: #5f6368;
+}
+
+.nav_item_profile {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.nav_item_profile a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-image: url("https://mlamarques.github.io/webpage/images/43910483.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #5f6368;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#main {
+    text-align: center;
+    margin-top: 30px;
+    flex: 1;
+}
+
+#logo {
+    padding-top: 15px;
 }
 
 #form {
-    overflow: visible;
-    margin: 0 32px;
-    border: solid;
+    margin-top: 30px;
+    position: relative;
 }
 
 #box {
-    position: relative;
+    max-width: 584px;
     margin: 0 auto;
-    padding-top: 6px;
-    width: 484px;
-    width: auto;
-    max-width: 484px;
 }
 
 #searchbox {
-    background: #fff;
+    position: relative;
     display: flex;
-    border: 1px solid #dfe1e5;
-    box-shadow: none;
-    border-radius: 24px;
-    z-index: 3;
+    align-items: center;
     height: 44px;
-    margin: 0 auto;
-    width: auto;
+    width: 100%;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 5px 8px 0 16px;
+}
+
+#lupa_icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+    margin-right: 7px;
+}
+
+#lupa_icon svg {
+    height: 20px;
+    width: 20px;
+    fill: #5f6368;
 }
 
 #divinput {
-    display: flex;
-    flex-wrap: wrap;
-    color: transparent;
-    flex: 100%;
-    white-space: pre;
+    height: 100%;
+    flex: 1;
 }
 
-input {
-    background-color: transparent;
+#search {
     border: none;
-    margin: 3px 20px 10px 20px;
-    color: rgba(0,0,0,.87);
-    word-wrap: break-word;
-    outline: none;
-    display: flex;
-    flex: 100%;
-    height: 34px;
+    width: 100%;
+    height: 100%;
     font-size: 16px;
+    margin-top: -3px;
+    color: #101010;
 }
 
-
-input:focus {
+#search:focus {
     outline: none;
 }
 
-button {
-    margin-top: 20px;
+#mic_icon {
+    height: 100%;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+    margin-right: 7px;
+}
+
+.HPVvwb {
+    height: 24px;
+    width: 24px;
+}
+
+.button {
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 30px;
+}
+
+.button:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;
+}
+
+.button:focus {
+    outline: none;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-top: 1px solid #e4e4e4;
+    background-color: #f2f2f2;
+}
+
+footer div ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+footer div ul li {
+    padding-left: 27px;
 }
