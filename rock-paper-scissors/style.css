@@ -1,0 +1,64 @@
+
+* {
+    font-family: 'Varela Round';
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 50px auto;
+    font-size: 80px;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;    
+}
+
+#scores {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(22, 22, 37);
+    height: 200px;
+    width: 200px;
+    color: honeydew;
+    font-size: 120px;
+    font-weight: bold;
+    top: 50%;
+}
+
+.player-title {
+    width: 50%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#options {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 600px;
+}
+
+button {
+
+}
+
+i {
+    font-size: 80px;
+}
+
+#score-log {
+    margin-top: 50px;
+}

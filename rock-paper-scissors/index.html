@@ -1,1 +1,45 @@
-<script src="r-p-s.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div id="container">
+        <div id="display">
+            <div id="title">
+                <div class="player-title" id="player">You</div>
+                <div class="player-title" id="computer">Computer</div>
+            </div>
+            <div id="scores">
+                <div class="score" id="player-score">0</div>
+                <div class="score" id="computer-score">0</div>
+            </div>
+        </div>
+        <div id="options">
+            <div id="rock">
+                <button data-key="rock" class="option">
+                    <i class="far fa-hand-rock"></i>
+                </button>
+            </div>
+            <div id="paper">
+                <button data-key="paper" class="option">
+                    <i class="far fa-hand-paper"></i>
+                </button>
+            </div>
+            <div id="scissors">
+                <button data-key="scissors" class="option">
+                    <i class="far fa-hand-scissors"></i>
+                </button>
+            </div>
+        </div>
+        <div id="score-log"></div>
+    </div>
+    <script src="rps-interface.js"></script>
+</body>
+</html>
