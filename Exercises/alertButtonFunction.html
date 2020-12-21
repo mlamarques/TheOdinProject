@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Button</title>
+</head>
+<body>
+    <button onclick="alertFunction()">Click Me</button>
+    <button id="btn">Click Me</button>
+    <button id="btn2">Click Me Too</button>
+    <button id="btn3">Click Me Too</button>
+    <button id="btn4">Last</button>
+
+    <script>
+        function alertFunction() {
+            alert("YAY! YOU DID IT!");
+        }
+        const btn = document.querySelector('#btn')
+        btn.onclick = alertFunction
+
+        const btn2 = document.querySelector('#btn2')
+        btn2.addEventListener('click', alertFunction)
+
+        btn3.addEventListener('click', function (e) {
+            console.log(e); //Note that function (e) is a callback from addEventListener. The e in that function is an object that references the event itself. 
+            console.log(e.target);
+        })
+
+        btn4.addEventListener('click', function(e) {
+            e.target.style.background = 'black'
+            e.target.style.color = 'white   '
+        })
+
+        // buttons is a node list. It looks and acts much like an array.
+        const buttons = document.querySelectorAll('button');
+
+        // we use the .forEach method to iterate through each button
+        buttons.forEach((button) => {
+
+        // and for each one we add a 'click' listener
+        button.addEventListener('click', () => {
+            alert(button.id);
+            });
+        });
+    </script>
+</body>
+</html>

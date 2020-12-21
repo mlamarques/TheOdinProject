@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Button</title>
+</head>
+<body>
+    <button onclick="alert('Hello World')">Click Me</button>
+    <button id="btn">Click Me</button>
+    <button id="btn2">Click Me Too</button>
+
+    <script>
+        const btn = document.querySelector('#btn')
+        btn.onclick = () => alert("Hello World2")
+
+        const btn2 = document.querySelector('#btn2')
+        btn2.addEventListener('click', () => {
+            alert("Hello World3")
+        })
+    </script>
+</body>
+</html>
