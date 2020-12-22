@@ -50,6 +50,10 @@ function addCount() {
     } else return
 }
 
+function removeTransition() {
+    this.classList.remove('playing')
+}
+
 const playerScore = document.querySelector('#player-score')
 const computerScore = document.querySelector('#computer-score')
 let buttons = document.querySelectorAll('[data-key]')
@@ -61,9 +65,12 @@ const scoreLog = document.querySelector('#score-log')
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
+        button.classList.add('playing')
         playerSelection = button.dataset.key
         computerSelection = computerPlay()
         game()
         addCount()
     })
 })
+
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition))

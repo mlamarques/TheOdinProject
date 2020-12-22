@@ -52,8 +52,27 @@ h1 {
 }
 
 button {
-
+    border-radius: 10px;
+    border: .4rem solid black;
+    height: 120px;
+    width: 120px;
+    transition: all .2s ease;
 }
+
+button:focus {
+    outline: none;
+}
+
+.playing {
+    transform: scale(1.2);
+}
+
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
 
 i {
     font-size: 80px;
