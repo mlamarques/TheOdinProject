@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="container">
+        <div id="calculator">
+            <div id="viewfinder">
+                <div class="previous-operation" data-previous-operation></div>
+                <div class="current-number" data-current-number></div>
+            </div>
+            <div id="pad">
+                    <button id="ce" class="operator" data-clear>CE</button>
+                    <button id="c" class="operator" data-clear-everything>C</button>
+                    <button id="delete" class="operator" data-delete>
+                        <i class="fas fa-backspace"></i>
+                    </button>
+                    <button id="divide" class="operator" value="/" data-operation>
+                        <i class="fas fa-divide"></i>
+                    </button>
+                    <button id="7" data-number>7</button>
+                    <button id="8" data-number>8</button>
+                    <button id="9" data-number>9</button>
+                    <button id="multiply" class="operator" value="*" data-operation>
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button id="4" data-number>4</button>
+                    <button id="5" data-number>5</button>
+                    <button id="6" data-number>6</button>
+                    <button id="minus" class="operator" value="-" data-operation>
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button id="1" data-number>1</button>
+                    <button id="2" data-number>2</button>
+                    <button id="3" data-number>3</button>
+                    <button id="sum" class="operator" value="+" data-operation>
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button id="negative" class="operator" value="*-1" data-negative>+-</button>
+                    <button id="0" data-number>0</button>
+                    <button id="dot" data-number>.</button>
+                    <button id="equals" class="operator" data-equals>
+                        <i class="fas fa-equals"></i>
+                    </button>
+            </div>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>
