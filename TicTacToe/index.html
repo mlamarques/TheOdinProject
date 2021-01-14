@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&amp;display=swap" rel="stylesheet">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <!-- END BOOKS SECTION-->
+    <!--START FORM SECTION-->
+    <section id="modal-start">
+        <div class="modal-main">
+            <div class="modal-title">
+                <h2>Write the players name:</h2>
+            </div>
+            <div class="modal-players">
+                <div class="player-input">
+                    <h3>PLAYER 1</h3>
+                    <input id="p1-input" type="text" placeholder="Player 1 name">
+                </div>
+                <div class="player-input">
+                    <h3>PLAYER 2</h3>
+                    <input id="p2-input" type="text" placeholder="Player 2 name">
+                </div>
+            </div>
+            <div class="modal-submit">
+                <input id="submit-players" type="submit" value="Submit">
+            </div>
+        </div>
+    </section>
+    <div id="main-container">
+        <div id="left-side" class="side">
+            <h2 class="turn">CURRENT TURN</h2>
+            <div id="player-left" class="player">
+                <h3></h3>
+            </div>
+            <div id="scoreP1" class="score">0</div>
+        </div>
+        <div id="mid">
+            <div id="title">
+                <h1>Tic Tac Toe</h1>
+            </div>
+            <div id="board" class="board">
+                <div class="square sqr1"></div>
+                <div class="square sqr2"></div>
+                <div class="square sqr3"></div>
+                <div class="square sqr4"></div>
+                <div class="square sqr5"></div>
+                <div class="square sqr6"></div>
+                <div class="square sqr7"></div>
+                <div class="square sqr8"></div>
+                <div class="square sqr9"></div>
+            </div>
+            <div>
+                <button id="newGameBtn">New Game</button>
+            </div>
+        </div>
+        <div id="right-side" class="side">
+            <h2 class="turn">CURRENT TURN</h2>
+            <div id="player-right" class="player">
+                <h3></h3>
+            </div>
+            <div id="scoreP2" class="score">0</div>
+        </div>
+    </div>
+    <div id="modal-win">
+        <div class="winner-card">
+            <span class="close">×</span>
+            <h1>HELOO</h1>
+        </div>  
+    </div>
+    <script src="Tic-Tac-Toe.js"></script>
+</body>
+</html>
