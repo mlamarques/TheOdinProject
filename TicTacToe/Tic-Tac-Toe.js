@@ -1,6 +1,9 @@
 //gameBoard -> module
 //players -> factories
-
+/* TODO
+// create a button for going to main page (change names)
+// organize code order
+*/
 const gameBoard = (() => {
     const player = (name, symbol) => {  // function player(name, symbol) {}
         const turn = undefined
