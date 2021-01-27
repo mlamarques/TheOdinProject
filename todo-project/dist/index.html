@@ -3,9 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Todo Application</title>
 </head>
 <body>
+    <!-- START NAV SECTION-->
+    <div class="vertical-menu" data-verticalMenu>
+        <div class="menu-item" data-verticalMenuGeneral>
+            <a href="#">General</a>
+        </div>
+        <div class="menu-item" data-verticalMenuToday>
+            <a href="#">Today</a>
+        </div>
+        <div class="menu-item" data-verticalUpcoming>
+            <a href="#">Upcoming</a>
+        </div>
+        <div class="menu-item" data-verticalMenuImportant>
+            <a href="#">Important</a>
+        </div>
+        <div class="list-filter" data-myListMenu>
+            <span class="drop">
+                <a href="#">></a>
+            </span>
+            <a href="#" class="list-title">My Lists</a>
+            <a href="#" class="add-list">+</a>
+            
+        </div>
+        <div class="list-items" data-myListItems></div>
+        <div class="list-filter" data-tagsMenu>
+            <span class="drop">></span>
+            <a href="#" class="list-title">Tags</a>
+            <a href="#" class="add-list">+</a>
+        </div>
+        <div class="tags-items" data-tagsItems></div>
+    </div>
+    <!-- END NAV SECTION-->
+    <!-- START MAIN SECTION-->
+    <div class="main-container">
+        <div class="main-title">
+            <h1>Test</h1>
+        </div>
+        <!-- START MAIN TASK BOX-->
+        <div class="main-container-add-task" data-addTaskBtnContainer>
+            <div class="main-add-task" data-addTaskBtn>
+                <a href="#"><i>X</i>Add task</a>
+            </div>
+            
+        </div>
+        <!-- END MAIN TASK BOX-->
+        <!-- START TASKS TABLE-->
+        <div class="container-all-task" data-containerAllTasks>
+            <div class="task-container">
+                <div class="task" id="_dk5w413sx">
+                    <!-- add-->
+                    <div class="task-top">
+                        <div class="task-check">
+                            <input class="checkbox-round" type="checkbox">
+                            <i class="fas fa-check" style="display: none;"></i>
+                        </div>
+                        <div class="task-title">
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="task-bottom">
+                        <div class="task-due-date">
+                            <i class="far fa-calendar-alt fa-lg"></i>
+                            <h4>Today</h4>
+                        </div>
+                        <div class="task-tags">
+                            <a>Hi</a>
+                            <a>Kpop</a>
+                            <a>tools</a>
+                        </div>
+                        <div class="task-list">
+                            <h4 value=1>Test</h4>
+                        </div>
+                    </div>
+                    <!-- add-->
+                </div>
+                <div class="task-options">
+                    <a>...</a>
+                </div>
+            </div>
+        </div>
+        <!-- END TASKS TABLE-->
+    </div>
+    <!-- END MAIN SECTION-->
     <script src="main.js"></script>
 </body>
 </html>
