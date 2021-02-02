@@ -193,11 +193,11 @@ div.main-title h1 {
     color: rgba(0, 0, 0, .6);
 }
 
-.input-box-bottom i.fa-flag[value="1"] {
+i.fa-flag[value="1"] {
     color: rgb(210, 192, 30);
 }
 
-.input-box-bottom i.fa-flag[value="2"] {
+i.fa-flag[value="2"] {
     color: rgb(250, 39, 11);
 }
 
@@ -247,6 +247,18 @@ div.main-title h1 {
 .temp-tags-menu {
     animation: dropdown-fade .25s;
     padding: 5px;
+    outline:0;
+}
+
+.temp-menu, .temp-task-menu {
+    outline:0;
+    margin: 0;
+}
+
+.temp-task-menu div a{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
 }
 
 .new-list-item {
@@ -276,4 +288,92 @@ div.main-title h1 {
     to {
         opacity: 1;
     }
+}
+
+
+/* MODAL */
+.edit-task-section {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+  }
+
+.task-fields-card {
+    margin-right: auto;
+    margin-left: auto;
+    width: max-content;
+    display: flex;
+    padding: 1rem 1rem;
+    border: solid 1px #d3d3d3;
+    border-radius: 5px;
+    position: relative;
+    background-color: #fff;
+    overflow-y: scroll;
+    width: 50vw;
+    height: 20vw;
+    max-height: 100vw;
+    flex-direction: column;
+}
+
+.task-fields-card::-webkit-scrollbar {
+    display: none;
+}
+
+.task-fields-card .fa-times {
+    color: #666666;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.task-fields-card .fa-times:hover{
+    cursor: pointer;
+}
+
+.task-fields-card .task-container {
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-fields-card .task {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.task-fields-card .task-top {
+    display: block;
+}
+
+.task-fields-card .task-bottom {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.task-fields-card .task-bottom-right {
+    display: block;
+}
+
+.task-bottom-right a {}
+
+.temp-btn-container button {
+    position: relative;
+    display: block;
+    padding-right: 15px;
+    float: left;
+    clear: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    margin-right: 15px;
 }

@@ -32,7 +32,9 @@
         </div>
         <div class="list-items" data-myListItems></div>
         <div class="list-filter" data-tagsMenu>
-            <span class="drop">></span>
+            <span class="drop">
+                <a href="#">></a>
+            </span>
             <a href="#" class="list-title">Tags</a>
             <a href="#" class="add-list">+</a>
         </div>
@@ -47,7 +49,7 @@
         <!-- START MAIN TASK BOX-->
         <div class="main-container-add-task" data-addTaskBtnContainer>
             <div class="main-add-task" data-addTaskBtn>
-                <a href="#"><i>X</i>Add task</a>
+                <a href="#"><i class="fas fa-plus fa-lg"></i> Add task</a>
             </div>
             
         </div>
@@ -90,6 +92,38 @@
         <!-- END TASKS TABLE-->
     </div>
     <!-- END MAIN SECTION-->
+    <!--START EDIT MODAL-->
+    <section class="edit-task-section" style="display: none;">
+        <div class="task-fields-card">
+            <h2 contenteditable="true"></h2>
+            <a><i class="fas fa-times fa-lg"></i></a>
+            <div class="task-container">
+                <div class="task">
+                    <div class="task-top">
+                        <div class="task-title">
+                            <h4 contenteditable="true"></h4>
+                        </div>
+                    </div>
+                    <div class="task-bottom">
+                        <div class="task-bottom-left">
+
+                        </div>
+                        <div class="task-bottom-right">
+                            <input type="date" class="temp-edit-date">
+                            <a><i class="fas fa-tags fa-lg"></i></a>
+                            <a><i class="fas fa-flag fa-lg"></i></a>                          
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="temp-btn-container">
+                    <button class="save-btn">Save</button>
+                    <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!--END EDIT MODAL-->
     <script src="main.js"></script>
 </body>
 </html>
