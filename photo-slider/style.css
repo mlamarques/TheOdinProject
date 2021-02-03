@@ -1,0 +1,134 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  body{
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+.btn-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.photo-display{
+    height: 400px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.photo-display.opc{
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+}
+
+.one {
+    background: rgb(153, 43, 226);
+}
+
+.two {
+    background: rgb(33, 6, 185);
+}
+
+.three {
+    background: rgb(23, 208, 233);
+}
+
+.four {
+    background: rgb(216, 181, 23);
+}
+
+.five {
+    background: rgb(224, 70, 8);
+}
+
+
+.photo-frame{
+    height: 500px;
+    width: 700px;
+    background: rgb(24, 131, 47);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button{
+    max-height: 25vh;
+    background: transparent;
+    text-decoration: none;
+    outline: none;
+    user-select: none;
+    border: transparent;
+}
+
+.fas{
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 300ms ease-in-out;
+}
+
+.fas:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+}
+
+.playing {
+    transform: scale(1.2);
+}
+
+.thumbs-container {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rotative-thumbs {
+    position: relative;
+    display: flex;
+    flex-direction: row; 
+}
+
+.idle-thumb {
+    height: 20px;
+    width: 20px;
+    background: rgb(255, 255, 255);
+    margin: 10px;
+    border-radius: 50%;
+    opacity: .5;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.idle-thumb.fill {
+    opacity: 1;
+}
+
+.progress {
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .9);
+    border-radius: 50%;
+    pointer-events: none;
+    /*
+    transform: translate(-100%, 0%);
+    transition: 5000ms;
+    */
+}
+
+/*
+    .progress.running{
+    transform: translate(0%, 0%);
+    }
+*/
+
