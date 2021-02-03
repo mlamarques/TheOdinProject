@@ -77,11 +77,7 @@ function createBookCard(book) {
     let switchInput = document.createElement('input')
     switchInput.classList.add("toggle")
     switchInput.setAttribute("type", "checkbox")
-        if (book.isRead == "true") {
-            switchInput.checked = true
-        } else {
-            switchInput.checked = false
-        }
+    switchInput.checked = book.isRead
     switchLabel.appendChild(switchInput)
     let switchSpan = document.createElement('span')
     switchSpan.classList.add("slider")
@@ -93,6 +89,7 @@ function createBookCard(book) {
         } else {
             myLibrary[book.id].isRead = false
         }
+        saveToLocalStorage()
     })
 
 
@@ -136,10 +133,24 @@ newBookFormCloseBtn.addEventListener('click', () => {
 })
 
 bookAddBtn.addEventListener('click', () => {
-    addBookToLibrary()
-    populatePage()
-    clearForm()
-    newBookForm.style.display = "none"
+    document.querySelectorAll('.new-book-form label').forEach((item) => {
+        if (!item.firstElementChild.checkValidity() || item.firstElementChild.value === 'null') {
+            item.lastElementChild.style.display = 'flex'
+        }
+    })
+    if (Array.from(document.querySelectorAll('.new-book-form label input').values()).every(a => a.checkValidity())
+        && document.querySelector('.new-book-form select option').value !== null) {
+            addBookToLibrary()
+            populatePage()
+            clearForm()
+            newBookForm.style.display = "none"
+            document.querySelectorAll('.new-book-form label .err-msg').forEach((item) => {   
+                item.style.display = 'none'  
+            })
+    }
+    // for(var value of document.querySelectorAll('.new-book-form label input').values()) {
+    //     value.checkValidity();
+    //   }
 })
 
 fieldClearBtn.addEventListener('click', () => {

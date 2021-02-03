@@ -311,8 +311,8 @@ i {
   }
   .new-book-section .new-book-form .err-msg {
     display: none;
-    font-size: 0.8rem;
-    margin-top: 0.3rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
     color: red;
   }
   .new-book-section .new-book-form .err-msg-display {

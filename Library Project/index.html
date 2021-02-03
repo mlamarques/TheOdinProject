@@ -31,9 +31,9 @@
           <h2 class="form_title">Add new book</h2>
           <span class="material-icons close-form"> close </span>
           <label for="b-title">Book title*
-            <input class="form-control" type="text" name="book-title" id="b-title" placeholder="Title"><small class="err-msg" style="display: none;">* Book title is required</small></label>
+            <input class="form-control" type="text" name="book-title" id="b-title" placeholder="Title" required><small class="err-msg" style="display: none;">* Book title is required</small></label>
           <label for="b-author">Book author*
-            <input class="form-control" type="text" name="book-author" id="b-author" placeholder="Author"><small class="err-msg" style="display: none;">* Book author is required</small></label>
+            <input class="form-control" type="text" name="book-author" id="b-author" placeholder="Author" required><small class="err-msg" style="display: none;">* Book author is required</small></label>
           <!--
             <label for="b-nbr_of_pages">Number of pages*
             <input class="form-control" type="number" name="pages-count" id="b-nbr_of_pages" placeholder="Number of pages" min="1"><small class="err-msg" style="display: none;">* Book number of pages is required</small></label>
@@ -43,7 +43,7 @@
             <input class="form-control" type="date" name="book-publishing-date" id="b-publishing_date"><small class="err-msg" style="display: none;">* Book publishing date is required</small></label>
           -->
             <label for="b-read_status">book status*
-            <select class="form-control" name="book-status" id="b-read_status">
+            <select class="form-control" name="book-status" id="b-read_status" required>
               <option value="null" disabled="" selected="">
                 did you read this book?
               </option>
