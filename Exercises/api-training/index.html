@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#" />
+  <input type="text" placeholder="What GIF you want?">
+  <button>Search GIF</button>
+  <script>
+      const img = document.querySelector('img');
+      const myBtn = document.querySelector('button');
+      const myInput = document.querySelector('input');
+
+      const myGiphyAPIKey = 'xAFCTFUZzoul10bIZU6JXAzmbMXdk8KJ'
+      let myGiphyUrl = 'https://api.giphy.com/v1/gifs/translate?api_key=' + myGiphyAPIKey + '&s='
+
+      fetch('https://api.giphy.com/v1/gifs/translate?api_key=xAFCTFUZzoul10bIZU6JXAzmbMXdk8KJ&s=cats', {mode: 'cors'})
+        .then(function(response) {
+         console.log(response);
+         return response.json();
+        })
+        .then(function(obj) {
+         console.log(obj.data.images.original.url);
+         img.src = obj.data.images.original.url;
+        })
+        .catch((err) => {
+            console.log(err)
+            img.src = './m5mnrxvuv3xz.jpg'
+        });
+
+      myBtn.addEventListener('click', () => {
+        fetch(myGiphyUrl + myInput.value , {mode: 'cors'})
+        .then(function(response) {
+         console.log(response);
+         return response.json();
+        })
+        .then(function(obj) {
+         console.log(obj.data.images.original.url);
+         img.src = obj.data.images.original.url;
+        })
+        .catch((err) => {
+            console.log(err)
+            img.src = './m5mnrxvuv3xz.jpg'
+        });
+      })  
+  </script>
+</body>
+</html>
