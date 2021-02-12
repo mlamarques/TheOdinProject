@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="searchbar">
+            <div class="bar-logo">
+                <img id="logo-img" src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png" alt="Icon of the weather app.">
+            </div>
+            <div class="searchbox">
+                <input type="search" placeholder="Enter a city">
+                <div class="search-btn-div">
+                    <button class="search-btn" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="today-main">
+            <div class="today-main-city">
+                <h1>Sao Paulo</h1>
+                <h4>February 11, 22:10</h4>
+            </div>
+            <div class="today-main-temperature">
+                <div class="today-main-max-min">
+                    max 23  -  min 18
+                </div>
+                <div class="today-main-temp-value">
+                    <h1>19</h1>
+                    <h2>°C</h2>
+                </div>
+                <div class="today-main-feels">
+                    Feels like 19°C
+                </div>
+            </div>
+            <div class="today-main-icon">
+                <img id="now-icon" src="" alt="Icon depicting current weather.">
+                <h3>Mostly cloudy</h3>
+            </div>
+        </div>
+        <div class="loader-container">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
