@@ -7,7 +7,8 @@ class MemeGenerator extends React.Component {
             topText: '',
             bottomText: '',
             randomImg: "http://i.imgflip.com/1bij.jpg",
-            allMemeImgs: []
+            allMemeImgs: [],
+            showModal: false
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,9 +33,23 @@ class MemeGenerator extends React.Component {
         const randNumber = Math.floor(Math.random() * this.state.allMemeImgs.length)
         const randMemeImg = this.state.allMemeImgs[randNumber].url
         this.setState({ randomImg: randMemeImg })
+        this.modal()
+    }
+
+    modal() {
+        this.setState({ showModal: true })
+        setTimeout(() => {
+            this.setState({ showModal: false })
+        }, 3000)
     }
 
     render() {
+        const Modal = () => (
+            <div className='copied'>
+                <h4>Meme created!</h4>
+            </div>
+          )
+
         return (
             <div>
                 <form className="meme-form" onSubmit={this.handleSubmit}>
@@ -59,6 +74,10 @@ class MemeGenerator extends React.Component {
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
+                <div>
+                    { this.state.showModal ? <Modal /> : null }
+                </div>
+                
             </div>
         )
     }
