@@ -31,7 +31,7 @@ function App() {
     <div>
       <Overview handleSubmit={handleSubmit} handleChange={handleChange} value={inputValue}/>
       <div>
-        {taskArray.map(item => <div>{item}</div>)}
+        {taskArray.map((item, index) => <div>{index} {item}</div>)}
       </div>
     </div>
   )

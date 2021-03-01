@@ -1,0 +1,30 @@
+div {
+    display: block;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.submitButton {
+    background: var(--green);
+}
+
+.submitButton:hover {
+    background: var(--green-dark);
+}
+
+.edit-education {
+    background: var(--white);
+    color: var(--title);
+    transition: background-color 0.2s;
+    border: var(--gray-line) solid 1px;
+}
+
+.edit-education:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.item-education {
+    border: solid var(--gray-line);
+    border-radius: 10px;
+}
