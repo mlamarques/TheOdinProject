@@ -1,0 +1,29 @@
+.navbar {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--background);
+
+    color: var(--title);
+}
+
+.navbar-icon {
+    position: relative;
+    font-size: 2rem;
+    margin: 0 2rem;
+}
+
+.navbar-icon span {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: Montserrat, serif;
+    position: absolute;
+
+    font-size: 1rem;
+    text-align: center;
+}
