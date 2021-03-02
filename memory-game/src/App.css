@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  flex-direction: column;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}

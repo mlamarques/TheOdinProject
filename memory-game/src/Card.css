@@ -1,0 +1,32 @@
+.card-container {
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    
+    height: 15rem;
+    width: 10rem;
+
+    background: #59BAE0;
+    border-radius: 15px;
+    margin: 6rem;   
+    
+    text-align: center;
+}
+
+.card-container:hover {
+    box-shadow: 0 0 40px #5965E0;
+    cursor: pointer;
+}
+
+.card-container img {
+    margin: 5px;
+    max-height: 181px;
+    max-width: 181px;
+    background-color: white;
+    border-radius: 15px
+}
+
+.card-container h4 {
+    line-height: 2rem;
+    color: honeydew;
+}

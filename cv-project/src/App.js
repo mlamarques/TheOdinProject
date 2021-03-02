@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import Information from './components/Information'
 import Education from './components/Education'
 import Experience from './components/Experience'
@@ -16,6 +16,7 @@ function App() {
   const [eduOrg, setEduOrg] = useState('')
   const [eduTitle, setEduTitle] = useState('')
   const [eduDescription, setEduDescription] = useState('')
+  const [isCvSubmited, setIsCvSubmited] = useState(false)
   // const [experiences, setExperiences] = useState([])
   // const [expOrg, setExpOrg] = useState('')
   // const [expRole, setExpRole] = useState('')
@@ -68,6 +69,10 @@ function App() {
     console.log(element.target.id)
   }
 
+  function changeCvSubmitValue() {
+    setIsCvSubmited(!isCvSubmited)
+  }
+
   // function addExperience() {
   //   setExperiences(oldArray => oldArray.concat([idExp, eduOrg, eduTitle, eduDescription]))
   //   setEduOrg('')
@@ -84,31 +89,38 @@ function App() {
   
   return (
     <div className="App">
-      <Information 
-        name={name} 
-        email={email} 
-        phone={phone}
-        // setName={setName} 
-        // setEmail={setEmail} 
-        // setPhone={setPhone} 
-        handleChange={handleChange}
-      />
-      <Education
-        handleChange={handleChange}
-        addEducation={addEducation}
-        eduOrg={eduOrg}
-        eduTitle={eduTitle}
-        eduDescription={eduDescription}
-      />
-      {educations.length !== 0 && educations.map(item => 
-                                                  <div className="item-education">
-                                                    <div>{item[1]} {item[2]} {item[3]}</div> 
-                                                    <button id={item[0]} className="edit-education" onClick={editEducationItem}>Edit</button>
-                                                  </div>)}
-      <hr/>
-      <Experience handleSubmit={handleSubmit}/>
-      <Final name={name} email={email} phone={phone}/>
-      <button className="submitButton" onClick={handleSubmit}>Submit</button>
+      {!isCvSubmited ?
+      <div> 
+        <Information 
+          name={name} 
+          email={email} 
+          phone={phone}
+          // setName={setName} 
+          // setEmail={setEmail} 
+          // setPhone={setPhone} 
+          handleChange={handleChange}
+        />
+        <Education
+          handleChange={handleChange}
+          addEducation={addEducation}
+          eduOrg={eduOrg}
+          eduTitle={eduTitle}
+          eduDescription={eduDescription}
+        />
+        {educations.length !== 0 && educations.map(item => 
+                                                    <div className="item-education">
+                                                      <div>{item[1]} {item[2]} {item[3]}</div> 
+                                                      <button id={item[0]} className="edit-education" onClick={editEducationItem}>Edit</button>
+                                                    </div>)}
+        <hr/>
+        <Experience handleSubmit={handleSubmit}/>
+        <button className="submitButton" onClick={changeCvSubmitValue}>Submit</button>
+      </div>
+      : <div>
+          <Final name={name} email={email} phone={phone}/>
+          <button className="edit-education" onClick={changeCvSubmitValue}>Back</button>
+        </div>
+      }
     </div>
   );
 }
