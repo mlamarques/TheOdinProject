@@ -11,11 +11,15 @@
     margin: 6rem;   
     
     text-align: center;
+
+    transition: transform 0.2s ease-in-out;
 }
 
 .card-container:hover {
     box-shadow: 0 0 40px #5965E0;
     cursor: pointer;
+
+    transform:scale(1.1)
 }
 
 .card-container img {
