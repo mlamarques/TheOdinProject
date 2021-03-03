@@ -1,0 +1,34 @@
+.cards-container {
+    margin: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    height: 20rem;
+    width: 15rem;
+
+    background: var(--blue);
+
+    text-align: center;
+    line-height: 2rem;
+
+    transition: 300ms ease-in-out;
+}
+
+.container img {
+    height: 18rem;
+    width: 15rem;
+    
+    object-fit: cover;
+}
+
+.container:hover {
+    transform: scale(1.1);
+}

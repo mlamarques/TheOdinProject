@@ -1,5 +1,5 @@
 .navbar {
-    height: 5rem;
+    height: var(--nav-height);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -10,20 +10,45 @@
     color: var(--title);
 }
 
-.navbar-icon {
-    position: relative;
-    font-size: 2rem;
+.navbar div {
     margin: 0 2rem;
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav-links a {
+    margin: 0 2rem;
+}
+
+.nav-links a:hover{ 
+    text-decoration: underline;  
+}
+
+.navbar-icon {
+    position: relative;
+    font-size: 2rem;
+    user-select: none;
+
+    transition: transform 300ms;
+}
+
 .navbar-icon span {
+    position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
 
     font-family: Montserrat, serif;
     position: absolute;
 
     font-size: 1rem;
     text-align: center;
+}
+
+.navbar-icon:hover {
+    transform: scale(1.12);
 }
