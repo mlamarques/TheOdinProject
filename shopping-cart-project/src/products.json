@@ -2,71 +2,85 @@
     {
         "id": "0",
         "url": "./img/pexels-photo-428340.jpeg",
-        "name": "White Shirt Bulb Style"
+        "name": "White Tee Bulb Style",
+        "price": "42.80"
     },
     {
         "id": "1",
         "url": "./img/pexels-photo-2589650.jpeg",
-        "name": "White Shirt Chinafornia Republic"
+        "name": "Tee Chinafornia Republic",
+        "price": "42.80"
     },
     {
         "id": "2",
         "url": "./img/pexels-photo-6147225.jpeg",
-        "name": "Denim Jacket"
+        "name": "Denim Jacket",
+        "price": "42.80"
     },
     {
         "id": "3",
         "url": "./img/pexels-photo-6147226.jpeg",
-        "name": "Auburn Hoodie"
+        "name": "Auburn Hoodie",
+        "price": "42.80"
     },
     {
         "id": "4",
         "url": "./img/pexels-photo-1030926.jpeg",
-        "name": "White Wool Sweater"
+        "name": "White Wool Sweater",
+        "price": "42.80"
     },
     {
         "id": "5",
         "url": "./img/pexels-photo-2774198.jpeg",
-        "name": "Red Blouse Dot Style"
+        "name": "Red Blouse Dot Style",
+        "price": "42.80"
     },
     {
         "id": "6",
         "url": "./img/pexels-photo-3059082.jpeg",
-        "name": "Black Sweater"
+        "name": "Black Sweater",
+        "price": "42.80"
     },
     {
         "id": "7",
         "url": "./img/pexels-photo-3645369.jpeg",
-        "name": "Mango Dress"
+        "name": "Mango Dress",
+        "price": "42.80"
     },
     {
         "id": "8",
         "url": "./img/pexels-photo-4352249.jpeg",
-        "name": "Beige Dress"
+        "name": "Beige Dress",
+        "price": "42.80"
     },
     {
         "id": "9",
         "url": "./img/pexels-photo-4380970.jpeg",
-        "name": "White Dress Leaf Style"
+        "name": "White Dress Leaf Style",
+        "price": "42.80"
     },
     {
         "id": "10",
         "url": "./img/pexels-photo-6147248.jpeg",
-        "name": "Beige Hoodie"
+        "name": "Beige Hoodie",
+        "price": "42.80"
     },
     {
         "id": "11",
         "url": "./img/pexels-photo-4462782.jpeg",
-        "name": "Black Sneakers"
+        "name": "Black Sneakers",
+        "price": "42.80"
     },
     {
         "id": "12",
         "url": "./img/pexels-photo-1159670.jpeg",
-        "name": "Yellow Dr. Martens Boots"
+        "name": "Yellow Dr. Martens Boots",
+        "price": "42.80"
     },
     {
         "id": "13",
         "url": "./img/pexels-photo-6046226.jpeg",
-        "name": "Gray Jacket"
+        "name": "Gray Jacket",
+        "price": "42.80"
     }
 ]

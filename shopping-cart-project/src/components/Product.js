@@ -1,9 +1,23 @@
 import React from 'react'
+import products from '../products.json'
+import '../styles/Product.css'
 
-const Product = () => {
+const Product = ({match}) => {
+    
+    const [item] = products.filter(item => item.id === match.params.id)
+    
     return (
-        <div>
-            <h1>Product</h1>
+        <div className='product-container'>
+            <div>
+                <img src={`.${item.url}`} alt='clothes-img'></img>
+            </div>
+            <div>
+                <div className='product-info'>
+                    <h1>{item.name}</h1>
+                    <h2 className='price'>{item.price} USD</h2>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
         </div>
     )
 }

@@ -6,15 +6,16 @@ import Catalog from './Catalog'
 import Home from './Home'
 import Product from './Product'
 
-const Routes = () => {
+const Routes = (props) => {
+    
     return (
         <BrowserRouter>
             <Navbar />
             <Switch>
-                <Route exact path="/cart" component={Cart}/>
+                <Route exact path="/cart" component={Cart} id={props.id}/>
                 <Route exact path="/catalog" component={Catalog}/>
                 <Route exact path="/" component={Home}/>
-                <Route exact path="/product" component={Product}/>
+                <Route exact path="/product/:id" component={Product}/>
             </Switch>
         </BrowserRouter>
     )
