@@ -1,0 +1,18 @@
+
+.void-photo {
+    background-image: url(../img/pexels-photo-1884584.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: calc(100vh - var(--nav-height));
+    width: 100vw;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.void-photo h1 {
+    font-size: 4rem;
+}

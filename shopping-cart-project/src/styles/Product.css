@@ -20,6 +20,8 @@
 
     text-align: center;
     font-size: 2rem;
+
+    font-family: 'Shippori Mincho', sans-serif;
 }
 
 
@@ -28,7 +30,7 @@
     margin: 4rem;
 }
 
-button {
+.product-info button {
     width: 50%;
     height: 4rem;
 
@@ -49,6 +51,6 @@ button {
     transition: background-color 0.2s;
 }
 
-button:not(:disabled):hover {
+.product-info button:not(:disabled):hover {
     background: var(--text);
 }
