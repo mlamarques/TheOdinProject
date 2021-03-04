@@ -3,7 +3,6 @@ import products from '../products.json'
 import '../styles/Product.css'
 
 const Product = (props) => {
-    console.log(props.match.params.id)
     
     //const [item] = products.filter(item => item.id === match.params.id)
     const [item] = products.filter(item => item.id === props.match.params.id)
@@ -17,7 +16,7 @@ const Product = (props) => {
                 <div className='product-info'>
                     <h1>{item.name}</h1>
                     <h2 className='price'>{item.price} USD</h2>
-                    <button>Add to Cart</button>
+                    <button onClick={() => props.handleClick(props.match.params.id)}>Add to Cart</button>
                 </div>
             </div>
         </div>

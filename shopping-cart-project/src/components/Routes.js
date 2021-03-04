@@ -5,22 +5,26 @@ import Catalog from './Catalog'
 import Home from './Home'
 import Product from './Product'
 import products from '../products.json'
+import { useState } from 'react'
 
 const Routes = () => {
 
-    //const [cartCount, setCartCount] = useState
+    const [cartCount, setCartCount] = useState(0)
 
     // useEffect(() => {
         
     // }, [cartCount])
 
-    function handleClick() {
-        // const [itemClicked] = products.filter(item => item.id === id)
+    function handleClick(id) {
+        products.map(item => item.id === id && item.count ++)
+        const [itemClicked] = products.filter(item => item.id === id)
         // console.log(itemClicked)
-        console.log(2)
+        console.log(itemClicked)
+
+        setCartCount(products.reduce((sum, item) => sum + item.count, 0))
     }
 
-    let cartCount = products.reduce((sum, item) => sum + item.count, 0)
+    //let cartCount = products.reduce((sum, item) => sum + item.count, 0)
     
     return (
         <BrowserRouter>
@@ -32,9 +36,8 @@ const Routes = () => {
                         {...props}
                     />)}/>
                 <Route exact path="/" component={Home}/>
-                <Route exact path="/product/:id" render={((match, props) => 
-                    <Product 
-                        {...match}
+                <Route exact path="/product/:id" render={(props => 
+                    <Product
                         {...props}
                         handleClick={handleClick} 
                     />)} />

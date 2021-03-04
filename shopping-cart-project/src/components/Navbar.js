@@ -3,6 +3,7 @@ import '../styles/Navbar.css'
 import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
+
     return (
         <div className='navbar'>
             <div>
