@@ -2,9 +2,10 @@ import './styles/global.css'
 import Routes from './components/Routes'
 
 const App = () => {
+  const id = '0'
   return (
     <div className="App">
-      <Routes />
+      <Routes id={id}/>
     </div>
   );
 }

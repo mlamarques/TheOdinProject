@@ -2,9 +2,11 @@ import React from 'react'
 import products from '../products.json'
 import '../styles/Product.css'
 
-const Product = ({match}) => {
+const Product = (props) => {
+    console.log(props.match.params.id)
     
-    const [item] = products.filter(item => item.id === match.params.id)
+    //const [item] = products.filter(item => item.id === match.params.id)
+    const [item] = products.filter(item => item.id === props.match.params.id)
     
     return (
         <div className='product-container'>
