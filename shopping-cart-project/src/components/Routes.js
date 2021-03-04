@@ -27,6 +27,14 @@ const Routes = () => {
         console.log(cartCount)
     }
 
+    function handleAddition(id) {
+        setProductsList(prev => prev.map(item => item.id === id ? {...item, count: item.count + 1} : item))
+    }
+
+    function handleSubstratction(id) {
+        setProductsList(prev => prev.map(item => item.id === id && item.count > 1 ? {...item, count: item.count - 1} : item))
+    }
+
     useEffect(() => {
         setTotalCost(productsList.reduce((sum, item) => sum + (item.price * item.count), 0))
         setCartCount(productsList.reduce((sum, item) => sum + item.count, 0))
@@ -62,6 +70,8 @@ const Routes = () => {
                                             unitValue={item.price.toLocaleString()}
                                             totalValue={(item.price * item.count).toLocaleString()}
                                             id={item.id}
+                                            handleSubstratction={handleSubstratction}
+                                            handleAddition={handleAddition}
                                             handleClose={handleClose}
                                         />
                                         )

@@ -12,9 +12,9 @@ const Cart = (props) => {
                     <div>
                         <h4>Quantity</h4>
                         <div className='quantity-buttons'>
-                            <button>-</button>
+                            <button onClick={() => props.handleSubstratction(props.id)}>-</button>
                             <span>{props.quantity}</span>
-                            <button>+</button>
+                            <button onClick={() => props.handleAddition(props.id)}>+</button>
                         </div>
                     </div>
                     <div className='cost-container'>
