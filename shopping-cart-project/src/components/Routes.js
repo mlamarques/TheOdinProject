@@ -77,7 +77,7 @@ const Routes = () => {
                                         )
                                     : <Void />
                                     }
-                                    <div style={totalStyle}>TOTAL<span style={totalStyleSpan}>{totalCost.toLocaleString()} USD</span></div>
+                                    {cartCount !== 0 && <div style={totalStyle}>TOTAL<span style={totalStyleSpan}>{totalCost.toLocaleString()} USD</span></div>}
                                 </div>
                             )}
                         />
