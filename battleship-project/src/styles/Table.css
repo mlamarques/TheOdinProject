@@ -1,0 +1,42 @@
+table {
+    border-spacing: 0;
+}
+
+.battlefield-table {
+    border-collapse: collapse;
+}
+
+.battlefield-cell {
+    border: 1px solid #b4b4ff;
+
+    padding: 0;
+}
+
+.battlefield-cell-content {
+    position: relative;
+
+    height: 2rem;
+    width: 2rem;
+
+    align-content: center;
+    justify-content: center;
+}
+
+.marker {
+    position: absolute;
+    text-align: center;
+}
+
+.marker-col {
+    top: -1.5rem;
+
+    width: 2rem;
+}
+
+.marker-row {
+    left: -2rem;
+    top: .5rem;
+
+    width: 2rem;
+    height: 1rem;
+}
