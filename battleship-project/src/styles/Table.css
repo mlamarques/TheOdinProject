@@ -40,3 +40,8 @@ table {
     width: 2rem;
     height: 1rem;
 }
+
+.player-title {
+    margin-top: 2rem;
+    text-align: center;
+}
