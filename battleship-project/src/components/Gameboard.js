@@ -21,6 +21,7 @@ const Gameboards = () => {
     const ship2 = Ship([boardTiles[4][5], boardTiles[4][6]])
     const ship3 = Ship([boardTiles[0][0], boardTiles[0][1], boardTiles[0][2]])
     const ships = [ship1, ship2, ship3]
+    const positions = [ship1.shipPosition, ship2.shipPosition, ship3.shipPosition]
 
     return {
         ships: ships,
@@ -41,7 +42,7 @@ const Gameboards = () => {
             }
         },
         missedShots: missedShots,
-        allShipTiles: ships.join()
+        positions: positions,
     }
 
 }

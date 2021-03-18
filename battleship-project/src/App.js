@@ -1,8 +1,17 @@
 import Table from './components/Table'
-import Cell from './components/Cell'
+import Gameboards from './components/Gameboard'
 import './styles/App.css'
+import { useEffect } from 'react';
 
 function App() {
+
+  function colorTiles() {
+    document.querySelectorAll('.player-table .battlefield-cell').forEach(element => {
+      if (allPos.includes(element.id)) {
+        element.style.background = shipStyle.background
+      }
+    });
+  }
 
   function handleClick(event) {
     console.log(event.currentTarget)
@@ -12,143 +21,38 @@ function App() {
     const cellLetter = document.querySelectorAll('.battlefield-row')[0].childNodes[columnIndex].children[0].lastChild.innerText
     const cellPosition = `${cellLetter}${rowIndex + 1}`
     console.log(cellPosition)
+      
+    //alert(allPos.includes(cellPosition) ? 'Hit' : 'Miss')
+    if (allPos.includes(cellPosition)) {
+      event.currentTarget.style.background = shipStyle2.background
+    } 
+    if (!allPos.includes(cellPosition)) {
+      event.currentTarget.style.background = shipStyle3.background
+    }
   }
+
+  useEffect(() => {
+    colorTiles()
+  }, [])
 
   const shipStyle = {
     'background': 'blue'
   }
 
+  const shipStyle2 = {
+    'background': 'red'
+  }
+
+  const shipStyle3 = {
+    'background': 'grey'
+  }
+
+  const allPos = Gameboards().positions.join().split(',')
+  
   return (
     <div className="App">
-      {/* <Table style={this.id = 'A1' && shipStyle} playerName={'You'}/>
-      <Table handleClick={handleClick} playerName={'Enemy'}/> */}
-      <table className='battlefield-table'>
-                <tbody>
-                    <tr className='battlefield-row'>
-                      <Cell>
-                        <div className='marker marker-row'>1</div>
-                        <div className='marker marker-col'>A</div>
-                      </Cell>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-                    <tr className='battlefield-row'>
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                      <Cell />
-                    </tr>
-        </tbody>
-      </table>
+      <Table className={'player-table'} playerName={'You'}/>
+      <Table handleClick={handleClick} playerName={'Enemy'}/>
     </div>
   );
 }
