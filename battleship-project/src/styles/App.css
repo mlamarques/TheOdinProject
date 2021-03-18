@@ -1,4 +1,4 @@
-.App {
+.App > div{
     position: absolute;
     display: grid;
     top: 50%;

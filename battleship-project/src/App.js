@@ -1,9 +1,12 @@
 import Table from './components/Table'
 import Gameboards from './components/Gameboard'
+import StartMenu from './components/StartMenu'
 import './styles/App.css'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [startMenu, setStartMenu] = useState(true)
 
   function colorTiles() {
     document.querySelectorAll('.player-table .battlefield-cell').forEach(element => {
@@ -31,9 +34,13 @@ function App() {
     }
   }
 
+  function handleStart() {
+    setStartMenu(false)
+  }
+
   useEffect(() => {
     colorTiles()
-  }, [])
+  }, [startMenu])
 
   const shipStyle = {
     'background': 'blue'
@@ -51,8 +58,14 @@ function App() {
   
   return (
     <div className="App">
-      <Table className={'player-table'} playerName={'You'}/>
-      <Table handleClick={handleClick} playerName={'Enemy'}/>
+      {!startMenu ?
+      <div> 
+        <Table className={'player-table'} playerName={'You'}/>
+        <Table handleClick={handleClick} playerName={'Enemy'}/>
+      </div>  
+      : 
+      <StartMenu handleStart={handleStart} />
+      }
     </div>
   );
 }
