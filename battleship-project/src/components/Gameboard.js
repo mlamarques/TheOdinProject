@@ -1,4 +1,5 @@
-import boardTiles from './BoardTiles'
+const boardTiles = require('./BoardTiles')
+const createBoats = require('./CreateBoats')
 const Ship = require('./Ship')
 
 const Gameboards = () => {
@@ -14,31 +15,38 @@ const Gameboards = () => {
     //     ['A9', 'B9', 'C9', 'D9', 'E9', 'F9', 'G9', 'H9', 'I9', 'J9'],
     //     ['A10', 'B10', 'C10', 'D10', 'E10', 'F10', 'G10', 'H10', 'I10', 'J10']
     // ]
+    let missedShots = 0
 
-    const missedShots = []
+    // const ship1 = Ship(['A9'])
+    // const ship2 = Ship([boardTiles[4][5], boardTiles[4][6]])
+    // const ship3 = Ship([boardTiles[0][0], boardTiles[0][1], boardTiles[0][2]])
+    //const ships = [ship1, ship2, ship3]
+    //const positions = [ship1.shipPosition, ship2.shipPosition, ship3.shipPosition]
+    const positions = createBoats()
+    let createShips = []
 
-    const ship1 = Ship(['A9'])
-    const ship2 = Ship([boardTiles[4][5], boardTiles[4][6]])
-    const ship3 = Ship([boardTiles[0][0], boardTiles[0][1], boardTiles[0][2]])
-    const ships = [ship1, ship2, ship3]
-    const positions = [ship1.shipPosition, ship2.shipPosition, ship3.shipPosition]
+    for (let i=0; i  < positions.length; i++) {
+        createShips.push(Ship(positions[i]))
+    }
+
+    const ships = createShips    
 
     return {
         ships: ships,
         receiveAttack: (coordinatesPair) => {
-            let hitMissed = 0
+            // let hitMissed = 0
             for (let i=0; i < coordinatesPair.length; i++) {
                 for (let j=0; j < ships.length; j++) {
                     if (ships[j].shipPosition.includes(coordinatesPair[i])) {
                         ships[j].hit(coordinatesPair[i])
                     } else {
-                        hitMissed ++
+                        missedShots ++
                     }
                 }
-                if (hitMissed === ships.length) {
-                    missedShots.push(coordinatesPair[i])
-                }
-                hitMissed = 0
+                // if (hitMissed === ships.length) {
+                //     missedShots.push(coordinatesPair[i])
+                // }
+                // hitMissed = 0
             }
         },
         missedShots: missedShots,
@@ -47,4 +55,4 @@ const Gameboards = () => {
 
 }
 
-export default Gameboards
+module.exports = Gameboards

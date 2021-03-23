@@ -45,3 +45,11 @@ table {
     margin-top: 2rem;
     text-align: center;
 }
+
+.fa-times {
+    position: relative;
+    line-height: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

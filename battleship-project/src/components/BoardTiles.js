@@ -11,4 +11,4 @@ const boardTiles = [
     ['A10', 'B10', 'C10', 'D10', 'E10', 'F10', 'G10', 'H10', 'I10', 'J10']
 ]
 
-export default boardTiles
+module.exports =  boardTiles
