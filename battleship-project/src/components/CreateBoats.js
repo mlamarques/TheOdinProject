@@ -74,14 +74,14 @@ const createBoats = () => {
         return true
     }
 
-    function shipFitsBoard(shipPosition) {
-        for (let i=0; i < shipPosition.length; i++) {
-            if (!ShipsPositions.join().includes(shipPosition[i])) {
-                return false
-            }
-        }
-        return true
-    }
+    // function shipFitsBoard(shipPosition) {
+    //     for (let i=0; i < shipPosition.length; i++) {
+    //         if (!ShipsPositions.join().includes(shipPosition[i])) {
+    //             return false
+    //         }
+    //     }
+    //     return true
+    // }
 
     for (let i=0; i < shipsLength.length; i++) {
         addNewBoat(shipsLength[i])        

@@ -1,8 +1,9 @@
 const Player = () => {
     return {
         name: "Player 1",
-        turn: false,
+        turn: true,
         score: 0,
+        clicks: [],
     }
 
 }
