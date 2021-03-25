@@ -23,14 +23,17 @@
 }
 
 .card-container img {
+    object-fit: cover;
+
     margin: 5px;
-    max-height: 181px;
-    max-width: 181px;
+    
+    height: 15rem;
     background-color: white;
-    border-radius: 15px
+    border-radius: 15px 15px 0 0;
 }
 
 .card-container h4 {
     line-height: 2rem;
     color: honeydew;
+    margin: 0;
 }

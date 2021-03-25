@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: space-evenly;
 
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    color: #fff;
 }
 
 .score {

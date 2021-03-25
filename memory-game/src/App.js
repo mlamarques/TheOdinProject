@@ -6,16 +6,16 @@ import Header from './Header'
 let array = [0,1,2,3,4,5,6,7,8,9]
 
 const images = [
-  { id: 0, path: "img/circle-black.png", name: 'Black Circle' },
-  { id: 1, path: "img/circle-yellow.png", name: 'Yellow Circle' },
-  { id: 2, path: "img/cross-black.png", name: 'Black Cross' },
-  { id: 3, path: "img/cross-red.png", name: 'Red Cross' },
-  { id: 4, path: "img/square-black.png", name: 'Black Square' },
-  { id: 5, path: "img/square-purple.png", name: 'Purple Square' },
-  { id: 6, path: "img/star-black.png", name: 'Black Star' },
-  { id: 7, path: "img/star-green.png", name: 'Green Star' },
-  { id: 8, path: "img/wave-black.png", name: 'Black Wave' },
-  { id: 9, path: "img/wave-blue.png", name: 'Blue Wave' },
+  { id: 0, path: "img/Earth_Spirit_Large.png", name: 'Earth Spirit' },
+  { id: 1, path: "img/Kunkka_large.png", name: 'Kunkka' },
+  { id: 2, path: "img/Tusk_Large.png", name: 'Tusk' },
+  { id: 3, path: "img/Snapfire_Large.png", name: 'Snapfire' },
+  { id: 4, path: "img/Shadow_Fiend_Large.png", name: 'Shadow Fiend' },
+  { id: 5, path: "img/Slardar_Large.png", name: 'Slardar' },
+  { id: 6, path: "img/Invoker_Large.png", name: 'Invoker' },
+  { id: 7, path: "img/Windranger_Large.png", name: 'Windranger' },
+  { id: 8, path: "img/Queen_of_Pain_Large.png", name: 'Queen of Pain' },
+  { id: 9, path: "img/Pangolier_Large.png", name: 'Pangolier' },
 ]
 
 function App() {
