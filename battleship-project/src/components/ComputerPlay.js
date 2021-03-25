@@ -11,7 +11,7 @@ const ComputerPlay = () => {
             hits.push(posOptions[num])
             posOptions.splice(posOptions.indexOf(posOptions[num]), 1)
 
-            return hits[-1]
+            return hits
         },
         hits: hits
     }

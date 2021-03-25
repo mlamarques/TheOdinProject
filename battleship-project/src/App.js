@@ -1,26 +1,27 @@
 import Table from './components/Table'
 import Gameboards from './components/Gameboard'
 import StartMenu from './components/StartMenu'
-import Player from './components/Player'
+//import Player from './components/Player'
 
 import './styles/App.css'
 import React from "react"
 import { useEffect, useState } from 'react';
 const ComputerPlay = require('./components/ComputerPlay')
 
-const App = () => {
-  
+const computerPlayer = ComputerPlay()
+//const player1 = Player()
+const gameBoardPlayer = Gameboards()
+const gameBoardComputer = Gameboards()
+
+///////////////////////////////////////////
+//TODO
+//Create a drag-and-drop for players ships
+///////////////////////////////////////////
+
+const App = () => {  
   const [startMenu, setStartMenu] = useState(true)
-  const [isLoading, setIsLoading] = useState(false)
   const [playerClicks, setPlayerClicks] = useState([])
   const [playerTurn, setPlayerTurn] = useState('Your')
-  const [winner, setWinner] = useState('')
-
-  const computerPlayer = ComputerPlay()
-  const player1 = Player()
-  const gameBoardPlayer = Gameboards()
-  const gameBoardComputer = Gameboards()
-  console.log(gameBoardComputer.positions)
 
   function colorTiles() {
     document.querySelectorAll('.player-table .battlefield-cell').forEach(element => {
@@ -31,56 +32,42 @@ const App = () => {
   }
 
   const handleClick = (event) => {
-    console.log(event.currentTarget.id)
     let id = event.currentTarget.id
-    //event.currentTarget.lastChild.lastChild.className = "fas fa-times fa-lg"
-    
-    console.log(playerClicks)
-    if (!playerClicks.includes(id)) {
-      setPlayerClicks(element => [...element, id])
-      playerPlay(id)
-
-      setPlayerTurn('Computer')
-      setTimeout(() => {
-        //computerPlay()
-        setPlayerTurn('Your')
-      }, 300)
-    }
-    
-    // console.log(event.currentTarget.id)
-    // console.log(player1.clicks)
-    // computerPlay(event.currentTarget.id)
-    // !player1.clicks.includes(event.currentTarget.id) && player1.clicks.push(event.currentTarget.id)
-    // if (!player1.clicks.includes(event.currentTarget.id)) {
-    //   computerPlay()
-    // }
-    
+    playerPlay(id)
+    computerPlay(id)
   }
 
   function playerPlay(id) {
-    
-    
-    //console.log(shipsPositions.join().split(',').includes(id))
+    if (!playerClicks.includes(id)) {
+      let playerHit = document.querySelector(`.computer-table #${id}`)
+      gameBoardComputer.receiveAttack([id])
+      setPlayerClicks(element => [...element, id])
+      setPlayerTurn('Computer')
+      
+      if (gameBoardComputer.positions.join().split(',').includes(id)) {
+        playerHit.style.background = shipStyle2.background
+      } else {
+        playerHit.style.background = shipStyle3.background
+      }
+    }
   }
 
-  function computerPlay() {
-      computerPlayer.pickTile()
-      const computerAttack = computerPlayer.hits
-      gameBoardPlayer.receiveAttack(computerAttack)
-
-      console.log(computerAttack)
-      let computerHit = document.querySelector(`.player-table #${computerAttack}`)
-      computerHit.lastChild.lastChild.className = "fas fa-times fa-lg"
-
-      // document.querySelectorAll('.player-table .battlefield-cell').forEach(element => {
-      //   if (computerPlayer.hits.join().split(',').includes(element.id)) {
-      //     element.lastChild.lastChild.className = "fas fa-times fa-lg"
-      //   }
-      // });
-
-    // checkStatusPlayerBoard()
-    // setPlayerTurn('You')
-      
+  function computerPlay(id) {
+    if (!playerClicks.includes(id)) {
+      document.querySelector(`.App`).style.cursor = 'wait'
+      document.querySelector(`.computer-table`).style.pointerEvents = 'none'
+      setTimeout(() => {
+        
+        computerPlayer.pickTile()
+        const computerAttacks = computerPlayer.hits
+        gameBoardPlayer.receiveAttack([computerAttacks[computerAttacks.length-1]])
+        let computerHit = document.querySelector(`.player-table #${computerAttacks[computerAttacks.length-1]}`)
+        computerHit.lastChild.lastChild.className = "fas fa-times fa-lg"
+        setPlayerTurn('Your')
+        document.querySelector(`.App`).style.cursor = 'default'
+        document.querySelector(`.computer-table`).style.pointerEvents = 'auto'
+      }, 600)
+    }
   }
 
   function checkStatusPlayerBoard() {
@@ -91,8 +78,7 @@ const App = () => {
       }
     }
     if (shipsSunk === gameBoardPlayer.ships.length) {
-      setWinner('Computer')
-      alert('You lost')
+      alert(`You lost`)
       //disable mouse
     }
   }
@@ -105,8 +91,7 @@ const App = () => {
       }
     }
     if (shipsSunk === gameBoardComputer.ships.length) {
-      setWinner('You')
-      alert('You win!')
+      alert(`You win!`)
       //disable mouse
     }
   }
@@ -117,7 +102,9 @@ const App = () => {
 
   useEffect(() => {
     colorTiles()
-  }, [startMenu])
+    checkStatusComputerBoard()
+    checkStatusPlayerBoard()
+  })
 
   const shipStyle = {
     'background': 'blue'
@@ -141,7 +128,7 @@ const App = () => {
         </div>
         <div className='gameboards'>
           <Table className={'player-table'} playerName={'You'}/>
-          <Table handleClick={handleClick} playerName={'Enemy'}/>
+          <Table className={'computer-table'} handleClick={handleClick} playerName={'Enemy'}/>
         </div>
       </div>  
       : 

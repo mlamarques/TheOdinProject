@@ -1,4 +1,4 @@
-const boardTiles = require('./BoardTiles')
+//const boardTiles = require('./BoardTiles')
 const createBoats = require('./CreateBoats')
 const Ship = require('./Ship')
 
