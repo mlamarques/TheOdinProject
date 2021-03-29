@@ -1,0 +1,42 @@
+[
+    {
+      "name": "Waldo",
+      "icon": "img/waldo.png",
+      "image": "img/waldo-body.png",
+      "minPosX": 455,
+      "maxPosX": 485,
+      "minPosY": 1530,
+      "maxPosY": 1565,
+      "opacity": 1
+    },
+    {
+      "name": "Wenda",
+      "icon": "img/wenda.png",
+      "image": "img/wenda-body.png",
+      "minPosX": 2125,
+      "maxPosX": 2150,
+      "minPosY": 1375,
+      "maxPosY": 1410,
+      "opacity": 1
+    },
+    {
+      "name": "Odlaw",
+      "icon": "img/odlaw.png",
+      "image": "img/odlaw-body.png",
+      "minPosX": 2430,
+      "maxPosX": 2455,
+      "minPosY": 1485,
+      "maxPosY": 1530,
+      "opacity": 1
+    },
+    {
+      "name": "Wizard",
+      "icon": "img/wizard.png",
+      "image": "img/wizard-body.png",
+      "minPosX": 814,
+      "maxPosX": 826,
+      "minPosY": 225,
+      "maxPosY": 265
+,
+"opacity": 1    }
+  ]
