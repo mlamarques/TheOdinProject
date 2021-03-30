@@ -1,0 +1,23 @@
+.you-won {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.7);
+    overflow-y: hidden;
+    transition: 0.5s ease-out;
+}
+
+.you-won h1 {
+    position: relative;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    
+}

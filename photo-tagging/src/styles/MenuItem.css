@@ -1,0 +1,11 @@
+.menu-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-item img {
+    height: 3rem;
+    background: #fff;
+
+    margin: .2rem;
+}

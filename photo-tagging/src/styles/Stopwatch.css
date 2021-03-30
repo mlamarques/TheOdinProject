@@ -1,0 +1,44 @@
+.stopwatch {
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    align-items: center;
+    font-family: Rajdhani;
+    font-weight: 600;
+    color: #666666;
+
+    margin-top: 5px;
+}
+
+.stopwatch > div {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background: #fff;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    text-align: center;
+}
+
+.stopwatch > div span {
+    flex: 1;
+}
+
+.stopwatch > div span:first-child {
+    border-right: 1px solid #f0f1f3;
+}
+
+.stopwatch > div span:last-child {
+    border-left: 1px solid #f0f1f3;
+}
+
+.stopwatch > span {
+    font-size: 3.25rem;
+    margin: 0 0.5rem;
+    color: #fff;
+}

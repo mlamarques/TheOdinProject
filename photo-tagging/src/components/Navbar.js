@@ -1,12 +1,13 @@
 import React from 'react'
 import '../styles/Navbar.css'
 import characters from '../characters.json'
+import Stopwatch from './Stopwatch'
 // import waldo from '../img/waldo.png'
 // import wizard from '../img/wizard.png'
 // import odlaw from '../img/odlaw.png'
 // import wenda from '../img/wenda.png'
 
-export function Navbar() {
+export function Navbar(props) {
     return (
          <div className='navbar'>
              <ul>
@@ -27,6 +28,7 @@ export function Navbar() {
                     <label htmlFor='wizard-img'>Wizard</label>
                 </li>
              </ul>
+             <Stopwatch minutes={props.minutes} seconds={props.seconds} />
          </div>
     )
 }
