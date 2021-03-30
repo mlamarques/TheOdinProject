@@ -2,10 +2,11 @@ import Menu from './components/Menu'
 import './App.css';
 // import img from 'img/background.jpg'
 import characters from './characters.json'
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { ClickStatus } from './components/ClickStatus'
 import ModalWin from './components/ModalWin'
+import useTimer from './hooks/useTimer';
 
 function App() {
   const [myCharacters, setMyCharacters] = useState(characters)
@@ -17,25 +18,15 @@ function App() {
   const [msgContent, setMsgContent] = useState('test')
   const [modalDisplay, setModalDisplay] = useState('none')
 
-  console.log(setMyCharacters)
-
-  ////////////////////////////// STOPWATCH
-  
-  const [timer, setTimer] = useState(0.00 * 60)
-  const [isActive, setisActive] = useState(false)
+  const { timer, isActive, handleStart, handleReset, handlePause } = useTimer(0)
 
   const minutes = Math.floor(timer / 60)
   const seconds = timer % 60
 
-  const increment = useRef(null)
-
-  function startCountdown() {
-      setisActive(true)
-      increment.current = setInterval(() => {
-        setTimer((timer) => timer + 1)
-      }, 1000)
+  if (!isActive) {
+      handleStart()
   }
-
+ 
 //   naturalHeight: 1828
 //   naturalWidth: 2828
 
@@ -62,15 +53,6 @@ function App() {
     if (hitTarget(event.pageX, event.pageY).length === 1) {
       setCurrentCharacter(hitTarget(event.pageX, event.pageY)[0])
     }
-    
-    if (checkWon()) {
-      if(isActive) {
-        clearInterval(increment.current)
-        setisActive(false)
-      }
-      setModalDisplay('block')
-      window.scrollTo(0, 0)
-    }
   }
 
   function handleClick2(event) {
@@ -92,6 +74,12 @@ function App() {
     
     setMenuStatus('menu-off')
     setCurrentCharacter([])
+    if (checkWon()) {
+      console.log(`User time: ${timer}`)
+      handlePause()
+      setModalDisplay('block')
+      window.scrollTo(0, 0)
+    }
   }
 
   function hitTarget(posX, posY) {
@@ -105,7 +93,7 @@ function App() {
 
   return (
     <div className="App" >
-      <Navbar minutes={minutes} seconds={seconds} />
+      <Navbar minutes={minutes} seconds={seconds}/>
       <div onClick={handleClick}>
         <img src='img/background.jpg' alt='img' ></img>
       </div>

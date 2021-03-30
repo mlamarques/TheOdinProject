@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Navbar.css'
 import characters from '../characters.json'
 import Stopwatch from './Stopwatch'
+import useTimer from '../hooks/useTimer';
 // import waldo from '../img/waldo.png'
 // import wizard from '../img/wizard.png'
 // import odlaw from '../img/odlaw.png'
 // import wenda from '../img/wenda.png'
 
 export function Navbar(props) {
+    
+
+    
+
     return (
          <div className='navbar'>
              <ul>
