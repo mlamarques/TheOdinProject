@@ -1,0 +1,22 @@
+.leaderboard-container {
+    position: fixed;
+    top: 5%;
+    left: 25%;
+
+    color: #fff;
+
+    height: 90%;
+    width: 50%;
+
+    background: rgba(0, 0, 0, 0.95);
+    overflow-y: hidden;
+    transition: 0.5s ease-out;
+}
+
+.leaderboard-container > span {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    cursor: pointer;
+}

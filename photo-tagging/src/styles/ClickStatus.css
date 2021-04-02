@@ -1,19 +1,20 @@
 .click-status {
     position: absolute;
-    height: 2rem;
+    height: 3rem;
+    width: 10rem;
     display: block;
     
     text-align: center;
     margin-bottom: 10px;
     padding-bottom: 10px;
-    color: #000;
+    color: #fff;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 
     
 
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color:lightcoral;
+    /* -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color:lightcoral; */
   }
   .click-status.visible {
     opacity: 1;
@@ -21,7 +22,7 @@
 
   .click-status h1 {
     justify-self: center;
-    background-color: lawngreen;
+    background-color: #242739;;
     line-height: 100%;
   }
 
