@@ -20,7 +20,7 @@ const Leaderboard = (props) => {
 
     return (
         <div className="leaderboard-container" style={{display: props.leaderDisplay}}>
-            <h3>LEADERS</h3>
+            <h1>LEADERS</h1>
             <span onClick={props.close}>X</span>
             <div>
                 {players}

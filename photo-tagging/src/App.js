@@ -21,7 +21,7 @@ function App() {
   const [msgStatus, setMsgStatus] = useState('click-status')
   const [msgContent, setMsgContent] = useState('test')
   const [modalDisplay, setModalDisplay] = useState('none')
-  const [startPage, setStartPage] = useState(null)
+  const [startPage, setStartPage] = useState(true)
   const [startTime, setStartTime] = useState(null)
   const [leaderboardContainer, setLeaderboardContainer] = useState('none')
   const [playerName, setPlayerName] = useState('')
