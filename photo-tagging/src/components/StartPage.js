@@ -1,11 +1,12 @@
 import React from 'react'
 import '../styles/StartPage.css'
 
-function StartPage({setStartPage, handleStart, ...props }) {
+function StartPage({setStartPage, handleStart, setStartTime, ...props }) {
 
     const handleClick = () => {
         setStartPage(false)
         handleStart()
+        setStartTime(Date.now())
     }
 
     return (

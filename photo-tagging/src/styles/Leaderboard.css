@@ -20,3 +20,21 @@
 
     cursor: pointer;
 }
+
+.leaderboard-container > div {
+    width: 80%;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.leaderboard-container > div > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.player-score {
+    font-size: 2rem;
+}

@@ -10,13 +10,16 @@ const useTimer = (initialState = 0) => {
       setIsActive(true)
       setIsPaused(true)
       countRef.current = setInterval(() => {
-        setTimer((timer) => timer + 1)
+        if(timer < (24 * 60 * 60)) {
+          setTimer((timer) => timer + 1)
+        }
       }, 1000)
     }
   
     const handlePause = () => {
       clearInterval(countRef.current)
       setIsPaused(false)
+      setIsActive(false)
     }
   
     const handleResume = () => {

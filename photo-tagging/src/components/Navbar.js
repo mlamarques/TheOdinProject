@@ -33,7 +33,7 @@ export function Navbar(props) {
                     <label htmlFor='wizard-img'>Wizard</label>
                 </li>
              </ul>
-             <Stopwatch minutes={props.minutes} seconds={props.seconds} />
+             <Stopwatch hours={props.hours} minutes={props.minutes} seconds={props.seconds} />
          </div>
     )
 }

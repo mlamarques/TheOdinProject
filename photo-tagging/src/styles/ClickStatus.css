@@ -1,12 +1,9 @@
 .click-status {
     position: absolute;
-    height: 3rem;
-    width: 10rem;
     display: block;
     
     text-align: center;
     margin-bottom: 10px;
-    padding-bottom: 10px;
     color: #fff;
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -20,10 +17,17 @@
     opacity: 1;
   }
 
-  .click-status h1 {
+  .click-status > div {
     justify-self: center;
-    background-color: #242739;;
-    line-height: 100%;
+    background-color: #242739;
+    padding: 8px;
+
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: Roboto;
+
+    border: 0;
+    border-radius: 10px;
   }
 
   
