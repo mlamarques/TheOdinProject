@@ -23,15 +23,26 @@ function App() {
   const [modalDisplay, setModalDisplay] = useState('none')
   const [startPage, setStartPage] = useState(true)
   const [startTime, setStartTime] = useState(null)
+  // const [currentTimer, setCurrentTimer] = useState(Cookies.get('session') ? Math.floor((new Date() - startTime) / 1000) : 0)
   const [leaderboardContainer, setLeaderboardContainer] = useState('none')
   const [playerName, setPlayerName] = useState('')
+  const [isSent, setisSent] = useState(false)
+
+  // if (Cookies.get('session')) {
+  //   setModalDisplay(false)
+  //   setCurrentTimer(Date.now() - startTime)
+  // }
+
+  // if (!Cookies.get('session')) {
+  //   setModalDisplay(true)
+  //   setCurrentTimer(0)
+  // }
 
   const { timer, isActive, handleStart, handleReset, handlePause } = useTimer(0)
 
   const hours = Math.floor(timer / 60 / 60)
   const minutes = Math.floor(timer / 60 % 60)
   const seconds = timer % 60
-  
  
 //   naturalHeight: 1828
 //   naturalWidth: 2828
@@ -87,6 +98,7 @@ function App() {
       handlePause()
       setModalDisplay('block')
       window.scrollTo(0, 0)
+      Cookies.remove('session')
     }
   }
 
@@ -94,21 +106,27 @@ function App() {
     setPlayerName(event.currentTarget.value)
   }
 
-  function sendPlayerData() {
-    console.log('data sent')
-    const data = {
-      name: playerName,
-      time: timer,
-      timestamp: Date.now()
-    }
+  function sendPlayerData(event) {
+    if (document.querySelector('input').value !== '' && isActive === false && isSent === false) {
+      // event.currentTarget.disabled = true
+      const data = {
+        name: playerName,
+        time: timer,
+        timestamp: Date.now()
+      }
 
-    // firebase.database().ref('users/' + userId).set({
-    //   username: name,
-    //   email: email,
-    //   profile_picture : imageUrl
-    // });
+      document.querySelector('input').value = ''
+      setisSent(true)
 
-    return projectDatabase.ref().child('leaderboard').push(data)
+      // firebase.database().ref('users/' + userId).set({
+      //   username: name,
+      //   email: email,
+      //   profile_picture : imageUrl
+      // });
+
+      return projectDatabase.ref().child('leaderboard').push(data)
+      }
+      
   }
 
   function hitTarget(posX, posY) {
@@ -134,15 +152,19 @@ function App() {
     setLeaderboardContainer('none')
   }
 
-  useEffect(() => {
-    Cookies.set('wizard', myCharacters[3].isFound)
-  }, [myCharacters])
+  function createCookie() {
+    Cookies.set('session', 'created', { expires: 1 })
+  }
+
+  // useEffect(() => {
+  //   Cookies.set('wizard', myCharacters[3].isFound)
+  // }, [myCharacters])
 
   return (
     <div className="App" >
       { startPage && !isActive ?
         <>
-          <StartPage setStartPage={setStartPage} setStartTime={setStartTime} handleStart={handleStart} openLeaderboard={openLeader} />
+          <StartPage setStartPage={setStartPage} setStartTime={setStartTime} createCookie={createCookie} handleStart={handleStart} openLeaderboard={openLeader} />
           <Leaderboard leaderDisplay={leaderboardContainer} close={closeLeader} />
         </>
       : 
@@ -154,7 +176,6 @@ function App() {
           <Menu charItems={myCharacters} class={menuStatus} handleClick={handleMenuClick} left={posX} top={posY}/>
           <ClickStatus content={msgContent} className={msgStatus} top={window.screenY + window.pageYOffset - 250} left={(window.screenX / 2) + window.pageXOffset}/>
           <ModalWin display={modalDisplay} time={timer} playerName={playerName} handleChange={handleChange} onClick={sendPlayerData} />
-          <Leaderboard leaderDisplay={leaderboardContainer} close={closeLeader} />
         </>
       }
     </div>
