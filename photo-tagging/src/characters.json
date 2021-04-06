@@ -2,8 +2,8 @@
     {
       "id": 0,
       "name": "Waldo",
-      "icon": "img/waldo.png",
-      "image": "img/waldo-body.png",
+      "icon": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/waldo.png?alt=media&token=4377e517-d538-4650-96ab-d60586a4577f",
+      "image": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/waldo-body.png?alt=media&token=8e24cad8-246b-4bb4-9a22-8160ac1bb85f",
       "minPosX": 450,
       "maxPosX": 490,
       "minPosY": 1525,
@@ -14,8 +14,8 @@
     {
       "id": 1,
       "name": "Wenda",
-      "icon": "img/wenda.png",
-      "image": "img/wenda-body.png",
+      "icon": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/wenda.png?alt=media&token=73635825-fc88-4ff4-adbe-c74ad35c8596",
+      "image": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/wenda-body.png?alt=media&token=bb2b9f18-b280-49cc-b79a-644b56d60ddc",
       "minPosX": 2120,
       "maxPosX": 2155,
       "minPosY": 1370,
@@ -26,8 +26,8 @@
     {
       "id": 2,
       "name": "Odlaw",
-      "icon": "img/odlaw.png",
-      "image": "img/odlaw-body.png",
+      "icon": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/odlaw.png?alt=media&token=c09c9d48-e873-498b-8544-44616bb57ca2",
+      "image": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/odlaw-body.png?alt=media&token=7b8e28af-1757-44fd-8a0b-f476062c105a",
       "minPosX": 2425,
       "maxPosX": 2460,
       "minPosY": 1480,
@@ -38,8 +38,8 @@
     {
       "id": 3,
       "name": "Wizard",
-      "icon": "img/wizard.png",
-      "image": "img/wizard-body.png",
+      "icon": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/wizard.png?alt=media&token=a77daf0e-aca1-4ccf-a85d-28d1291a6d1e",
+      "image": "https://firebasestorage.googleapis.com/v0/b/whereswaldo-6ffb4.appspot.com/o/wizard-body.png?alt=media&token=81ed382e-a496-46f2-823e-a3f43aebe2a4",
       "minPosX": 810,
       "maxPosX": 830,
       "minPosY": 220,
