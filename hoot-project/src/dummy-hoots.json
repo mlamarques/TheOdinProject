@@ -1,0 +1,20 @@
+[
+    {
+        "date": 202116040451,
+        "id": 1,
+        "user_id": 1,
+        "message": "this is my first message",
+        "comments": 1,
+        "reposts": 1,
+        "likes": 2
+    },
+    {
+        "date": 202116040455,
+        "id": 2,
+        "user_id": 1,
+        "message": "Welcome to the jungle",
+        "comments": 0,
+        "reposts": 0,
+        "likes": 1
+    }
+]

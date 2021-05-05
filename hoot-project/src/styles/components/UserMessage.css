@@ -1,0 +1,59 @@
+.user-message-container {
+    display: flex;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    
+    width: 100%;
+
+    padding: 16px;
+
+    background: var(--background);
+
+}
+
+.user-message-container:hover {
+    cursor: pointer;
+    filter: brightness(0.95);
+}
+
+.photo-container {
+    margin-right: 12px;
+}
+
+.logo-img {
+    background-image: url("https://pbs.twimg.com/profile_images/817273891928145920/a1P9FSnS_200x200.jpg");
+    background-size: cover;
+    height: 48px;
+    width: 48px;
+}
+
+.text-container {
+    display: flex;
+    flex-grow: 1;
+
+    align-items: stretch;
+
+    flex-direction: row;
+}
+
+.user-info {
+    display: flex;
+    flex-grow: 1;
+    
+    height: 100%;
+    flex-direction: column;
+}
+
+.user-name-link {
+    height: auto;
+}
+
+.date-container {
+    display: flex;
+
+    pointer-events: none;
+
+    font-size: 15px;
+    line-height: 20px;
+}

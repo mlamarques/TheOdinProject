@@ -1,10 +1,14 @@
-import './App.css';
+import { BrowserRouter as Router, Link } from 'react-router-dom'
+import './styles/global.css'
+import MainRoutes from './routes'
 
 function App() {
   return (
-    <div className="App">
-      Hoot App
-    </div>
+    <Router>
+      <div className="App">
+        <MainRoutes />
+      </div>
+    </Router>
   );
 }
 

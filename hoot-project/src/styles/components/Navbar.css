@@ -1,0 +1,14 @@
+.navbar {
+    height: 100%;
+    width: 275px;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background: var(--background);
+
+    border-right: lawngreen 1px;
+
+    justify-content: center;
+}

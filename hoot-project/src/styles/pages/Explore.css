@@ -1,0 +1,7 @@
+.explore-page .top-menu {
+    transition: top 0.3s
+}
+
+.dynamic {
+    top: -55px;
+}

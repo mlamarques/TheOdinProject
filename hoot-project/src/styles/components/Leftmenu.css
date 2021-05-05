@@ -1,0 +1,6 @@
+.left-menu {
+    width: 280px;
+    height: 100vh;
+
+    background: var(--blue-dark);
+}

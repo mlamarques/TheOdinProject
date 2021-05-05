@@ -1,0 +1,56 @@
+.compose-button-container {
+    display: flex;
+    position: fixed;
+    right: 20px;
+    bottom: calc(55px + 20px);
+
+    align-self: flex-end;
+
+    flex-shrink: 0;
+}
+
+.compose-button-link {
+    display: flex;
+
+    width: 64px;
+    height: 64px;
+    min-width: 40px;
+    min-height: 40px;
+
+    background-color: rgb(29, 161, 242);
+    box-shadow: rgba(217, 217, 217, 0.2) 0px 0px 5px, rgba(217, 217, 217, 0.25) 0px 1px 4px 1px;
+    outline-style: none;
+}
+
+.compose-button-content {
+    display: flex;
+    max-width: 100%;
+
+    color: rgb(255, 255, 255);
+
+    min-width: 0px;
+
+    -moz-box-align: center;
+    align-items: center;
+    justify-content: center;
+    -moz-box-pack: center;
+
+    flex-grow: 1;
+
+    text-align: center;
+}
+
+.compose-button-content > svg {
+    width: 1.75em;
+    height: 1.75em;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    fill: currentcolor;
+
+    display: inline-block;
+
+    justify-content: center;
+}
