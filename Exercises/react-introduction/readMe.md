@@ -24,8 +24,15 @@ You can run a command for setting up a complete React application for you with *
 ```
 npx create-react-app my-first-react-app
 ```
-## Start the project
 
+using yarn and typescript flag
+```
+yarn create react-app my-app --template=typescript 
+```
+## Start the project
+```
+cd .\my-first-react-app
+```
 ```
 yarn start
 ```
