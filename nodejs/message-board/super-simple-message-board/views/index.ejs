@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><% title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 style="font-weight:700;font-size:32px;text-align:center;">Simple Message Board</h1>
+    <div style="text-align: center;">
+      <a href="/new">New Message</a>
+    </div>
+    <ul class="timeline">
+      <% for (var i = 0; i < messages.length; i++) { %>
+      <li class="timeline-yellow">
+        
+          <div class="timeline-time">
+              <span class="text" style="font-weight:700;font-size:25px;line-height:20px">
+                <%= messages[i].text %>
+              </span>
+              <br>
+              <span class="user" style="font-weight:400;font-size:16px;line-height:20px;text-align:left;">
+                user: <%= messages[i].user %> 
+              </span>
+              <span style="font-weight:700"> | </span>
+              <span class="added" style="text-align:right">
+                added: <%= messages[i].added %>
+              </span>
+              <br>
+              <hr>
+              <br>
+          </div>
+      </li>
+      <% } %>
+  </ul>
+  </body>
+</html>
