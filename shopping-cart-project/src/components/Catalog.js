@@ -8,6 +8,7 @@ const Catalog = () => {
     const cards = products.map(item => <div className='container' key={item.id}>
                                             <Link to={`/product/${item.id}`}><img src={item.url} alt='clothes-img'></img></Link>
                                             <div>{item.name}</div> 
+                                            {console.log(item.url)}
                                        </div>)
     return (
         <div>
