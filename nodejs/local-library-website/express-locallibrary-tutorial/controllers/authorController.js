@@ -2,6 +2,7 @@ var Author = require('../models/author');
 var async = require('async');
 var Book = require('../models/book');
 const { body,validationResult } = require('express-validator');
+var debug = require('debug')('author');
 
 // Display list of all Authors.
 exports.author_list = function(req, res, next) {
@@ -144,8 +145,7 @@ exports.author_update_get = function(req, res, next) {
     Author.findById(req.params.id).exec(function (err, author) {
         if (err) { return next(err) }
         if (author==null) {
-          var err = new Error('Author not found')
-          err.status = 404
+          debug('update error: ' + err)
           return next(err)
         }
         res.render('author_form', { title: 'Update Author', author });
