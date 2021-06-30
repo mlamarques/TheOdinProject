@@ -155,7 +155,7 @@ exports.genre_update_get = function(req, res, next) {
         err.status = 404
         return next(err)
       }
-      res.render('genre_form', { title: 'Create Genre', genre });
+      res.render('genre_form', { title: 'Update Genre', genre });
     })
 };
 
@@ -179,7 +179,7 @@ exports.genre_update_post = [
 
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values/error messages.
-      res.render('genre_form', { title: 'Create Genre', genre: genre, errors: errors.array()});
+      res.render('genre_form', { title: 'Update Genre', genre: genre, errors: errors.array()});
       return;
     }
     else {
