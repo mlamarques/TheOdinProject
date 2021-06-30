@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const { DateTime } = require("luxon");
 
 var Schema = mongoose.Schema;
 
@@ -28,14 +29,44 @@ AuthorSchema
 AuthorSchema
     .virtual('lifespan')
     .get(function () {
-        return (this.date_of_death.getYear() - this.date_of_birth.getYear).toString();
+        const dateBirth = this.date_of_birth ? DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED) : ''
+        const dateDeath = this.date_of_death ? DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED) : ''
+
+        return  dateBirth+" - "+ dateDeath;
     });
 
 // Virtual for author's URL
 AuthorSchema
     .virtual('url')
     .get(function () {
-    return '/catalog/author/' + this._id;
+        return '/catalog/author/' + this._id;
     });
+
+// Virtual for date of birth
+AuthorSchema
+    .virtual('date_of_birth_formatted')
+    .get(function () {
+        return this.date_of_birth ? DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED) : '';
+    });
+
+// Virtual for date of birth
+AuthorSchema
+    .virtual('date_of_death_formatted')
+    .get(function () {
+        return this.date_of_death ? DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED) : '';
+    });
+
+// Virtual for date yyyy_mm_dd  
+AuthorSchema
+.virtual('date_of_birth_yyyy_mm_dd')
+.get(function () {
+    return DateTime.fromJSDate(this.date_of_birth).toISODate(); //format 'YYYY-MM-DD'
+}); 
+
+AuthorSchema
+.virtual('date_of_death_yyyy_mm_dd')
+.get(function () {
+    return DateTime.fromJSDate(this.date_of_death).toISODate(); //format 'YYYY-MM-DD'
+}); 
 
 module.exports = mongoose.model('Author', AuthorSchema)
