@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Karla, arial, helvetica, sans-serif;
+    background-color: #0B2434;
+    color: #2B283A;
+    padding: 2rem;
+}
+
+.app {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.main {
+    background-color: #F5F5F5;
+    height: 400px;
+    width: 600px;
+    max-width: 800px;
+    border-radius: 6px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(5, 3rem);
+    grid-auto-flow: row;
+    gap: 3rem;
+}
+
+.dice-face {
+    display: grid;
+    align-content: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9px;
+    cursor: pointer;
+    /* animation: 1s ease-out 0s 1 normal none running type; */
+}
+
+@keyframes type {
+    0%  {transform: scale(1);}
+    50%  {transform: scale(1.2);}
+    100%  {transform: scale(1);}
+}
+
+/* .dice-held {
+    display: grid;
+    align-content: center;
+    background-color: #59E391;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9px;
+    cursor: pointer;
+} */
+
+.die-num {
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    user-select: none;
+}
+
+.roll-button {
+    border:none;
+    grid-column: 2 / -2;
+    margin-top: 2rem;
+    justify-self: center;
+    width: 9rem;
+    height: 3rem;
+    background-color: #5035FF;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.roll-button:hover {
+    background-color: #351fc5;
+}
+
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    color: #fff;
+}
+
+.instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 600px;
+}
+
+/* Dots style */
+.dots-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 3rem;
+    height: 3rem;
+    padding: 3px;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.quadrant {
+    width: 100%;
+    height:100%;
+}
+
+.dot {
+    position: relative;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    border-radius: 999999px;
+}
+
+.four, .three, .two {
+    height: 12px;
+    width: 12px;
+}
+
+.one {
+    height: 15px;
+    width: 15px;
+}
+
+.score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: auto 6rem;
+    color: #fff;
+    width: 10rem;
+}
