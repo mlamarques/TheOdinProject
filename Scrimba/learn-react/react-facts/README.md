@@ -1,0 +1,3 @@
+Learned:
+- JSX
+- Static pages
