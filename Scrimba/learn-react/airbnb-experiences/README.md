@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/43910483/150338115-2f689824-f693-42c4-8c60-cf4677da9170.png)
+
+
 React course from Scrimba: Data-driven pages
 
 What I learned:
